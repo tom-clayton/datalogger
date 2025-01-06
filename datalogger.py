@@ -9,7 +9,7 @@ ERRORFILE = "error.txt"
 
 def run(loggers=[]):
     """loop forever, checking given timed loggers if any"""
-    if type(loggers) == Logger:
+    if isinstance(loggers, Logger):
         loggers = [loggers]
     if loggers:
         print (

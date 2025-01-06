@@ -25,7 +25,7 @@ def start_mqtt(new_loggers, broker=BROKER, port=PORT):
     """register loggers, connect to broker and start loop thread"""
     
     loggers.extend(
-        [new_loggers] if type(new_loggers) == Logger else new_loggers
+        [new_loggers] if isinstance(new_loggers, Logger) else new_loggers
     )
     client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     client.on_connect = on_connect
